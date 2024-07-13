@@ -1,10 +1,10 @@
 package main
 
 import (
-	"fmt"
 	"log"
-	"os"
 
+	"github.com/alexandreReys/api-jwt-repository-mongodb/src/controller/routes"
+	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
 )
 
@@ -14,8 +14,10 @@ func main() {
     log.Fatal("Error loading .env file")
   }
 
-  test := os.Getenv("TEST")
-	
-	fmt.Println(test)
-	
+	router := gin.Default();
+	router.RouterGroup = *router.Group("/api/v1")	
+	routes.InitRoutes(&router.RouterGroup)
+	if err = router.Run(":8080"); err != nil {
+		log.Fatal(err)
+	}
 }
