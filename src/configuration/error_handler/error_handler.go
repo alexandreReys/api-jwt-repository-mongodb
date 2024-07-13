@@ -1,11 +1,11 @@
-package errorshandler
+package errorHandler
 
 import "net/http"
 
 type ErrorHandler struct {
 	Message string `json:"message"`
 	Err string `json:"error"`
-	Code int64 `json:"code"`
+	Code int `json:"code"`
 	Causes []Causes `json:"causes,omitempty"`
 }
 
@@ -18,7 +18,7 @@ func (e *ErrorHandler) Error() string {
 	return e.Message
 }
 
-func NewErrorHandler(message string, err string, code int64, causes []Causes) *ErrorHandler {
+func NewErrorHandler(message string, err string, code int, causes []Causes) *ErrorHandler {
 	return &ErrorHandler{
 		Message: message,
 		Err: err,
