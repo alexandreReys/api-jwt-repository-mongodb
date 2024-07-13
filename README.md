@@ -36,3 +36,9 @@ go: added github.com/joho/godotenv v1.5.1
 *https://github.com/go-playground/validator/blob/master/README.md*
 
 > go get github.com/go-playground/validator/v10
+
+### Go Package zap
+
+*https://github.com/uber-go/zap*
+
+> go get -u go.uber.org/zap
