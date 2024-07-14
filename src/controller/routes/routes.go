@@ -1,7 +1,7 @@
 package routes
 
 import (
-	controller "github.com/alexandreReys/api-jwt-repository-mongodb/src/controller/routes/users"
+	controller "github.com/alexandreReys/api-jwt-repository-mongodb/src/controller/users"
 	"github.com/gin-gonic/gin"
 )
 
